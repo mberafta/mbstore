@@ -1,3 +1,4 @@
+import { CartService } from './../../../services/cart.service';
 import { PaginationOptions } from './../../../shared/PaginationOptions';
 import { Component, OnInit } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
@@ -21,7 +22,7 @@ export class ProductListComponent implements OnInit {
 
   paginationsOptionsStream: BehaviorSubject<PaginationOptions>;
 
-  constructor() {
+  constructor(private cartService: CartService) {
     for (let i = 0; i < 10; i++) {
       this.products.push({
         name: 'Produit ' + (i + 1),

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppNgBootstrapModule } from './app-ngboostrap.module';
+import { StorageServiceModule } from 'ngx-webstorage-service';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { CartService } from './services/cart.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppNgBootstrapModule
+    AppNgBootstrapModule,
+    StorageServiceModule
   ],
   providers: [
     CartService
