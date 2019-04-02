@@ -11,6 +11,8 @@ namespace MBStore.Models
 
         public string Status { get; set; }
 
+        public Guid CartId { get; set; }
+
         public Cart Cart { get; set; }
     }
 }

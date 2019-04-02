@@ -25,9 +25,10 @@ namespace MBStore.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Order>()
-                .HasOne(o => o.Cart)
-                .WithOne(c => c.Order);
+            modelBuilder.Entity<Cart>()
+                .HasOne(c => c.Order)
+                .WithOne(o => o.Cart)
+                .HasForeignKey<Order>(o => o.CartId);
 
             modelBuilder.Entity<Cart>()
                 .HasMany(c => c.CartItems)
