@@ -14,3 +14,19 @@ C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.Ra
 C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.dll
 C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.pdb
 C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csproj.CopyComplete
+D:\Projets web\mbstore\MBStore\bin\Debug\netcoreapp2.1\MBStore.deps.json
+D:\Projets web\mbstore\MBStore\bin\Debug\netcoreapp2.1\MBStore.runtimeconfig.json
+D:\Projets web\mbstore\MBStore\bin\Debug\netcoreapp2.1\MBStore.runtimeconfig.dev.json
+D:\Projets web\mbstore\MBStore\bin\Debug\netcoreapp2.1\MBStore.dll
+D:\Projets web\mbstore\MBStore\bin\Debug\netcoreapp2.1\MBStore.pdb
+D:\Projets web\mbstore\MBStore\bin\Debug\netcoreapp2.1\MBStore.Views.dll
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csprojAssemblyReference.cache
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csproj.CoreCompileInputs.cache
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.RazorAssemblyInfo.cache
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.RazorAssemblyInfo.cs
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.AssemblyInfoInputs.cache
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.AssemblyInfo.cs
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.RazorTargetAssemblyInfo.cache
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.dll
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.pdb
+D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csproj.CopyComplete

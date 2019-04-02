@@ -29,7 +29,7 @@ namespace MBStore.Controllers
         [HttpGet("{id}")]
         public Product GetProduct(Guid id)
         {
-            Product existingProduct = _repository.Products.FirstOrDefault(p => p.Id == id);
+            Product existingProduct = _repository.Products.FirstOrDefault(p => p.ProductId == id);
             return existingProduct;
         }
     }
