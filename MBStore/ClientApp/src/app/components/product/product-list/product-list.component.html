@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" style="padding:5px;" *ngFor="let p of displayedProducts">
+      <div class="card">
+        <img class="card-img-top" src="http://via.placeholder.com/640x360" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}} - <strong>{{p.price | currency}}</strong></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary"><span>Ajouter</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row" style="padding-bottom:2.5em;">
+    <div class="col-sm-12 text-center">
+      <div class="btn-group">
+        <button class="btn btn-info" *ngIf="paginationOptions.currentPage > 0" (click)="changePage(-1)">
+          Précédent
+        </button>
+        <button class="btn btn-info" *ngIf="paginationOptions.currentPage < paginationOptions.totalPages" (click)="changePage(1)">
+          Suivant
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

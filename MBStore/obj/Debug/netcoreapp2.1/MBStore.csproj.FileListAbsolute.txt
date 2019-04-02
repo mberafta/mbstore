@@ -1,0 +1,16 @@
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\bin\Debug\netcoreapp2.1\MBStore.deps.json
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\bin\Debug\netcoreapp2.1\MBStore.runtimeconfig.json
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\bin\Debug\netcoreapp2.1\MBStore.runtimeconfig.dev.json
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\bin\Debug\netcoreapp2.1\MBStore.dll
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\bin\Debug\netcoreapp2.1\MBStore.pdb
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\bin\Debug\netcoreapp2.1\MBStore.Views.dll
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csprojAssemblyReference.cache
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csproj.CoreCompileInputs.cache
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.RazorAssemblyInfo.cache
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.RazorAssemblyInfo.cs
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.AssemblyInfoInputs.cache
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.AssemblyInfo.cs
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.RazorTargetAssemblyInfo.cache
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.dll
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.pdb
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csproj.CopyComplete
