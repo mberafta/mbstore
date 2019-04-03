@@ -21,10 +21,10 @@ namespace MBStore.Controllers
             _repository = repository;
         }
 
-        [HttpGet("{page}")] // api/Product
-        public IEnumerable<Product> GetProducts(int page)
+        [HttpGet] // api/Product
+        public IEnumerable<Product> GetProducts()
         {
-            return _repository.Products.Skip((page - 1) * PageSize).Take(PageSize);
+            return _repository.Products;
         }
 
         [HttpGet("{id}")]
