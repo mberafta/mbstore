@@ -14,22 +14,23 @@ namespace MBStore.Controllers
     public class ProductController : ControllerBase
     {
         private IProductRepository _repository;
+        private const int PageSize = 9; 
 
         public ProductController(IProductRepository repository)
         {
             _repository = repository;
         }
 
-        [HttpGet] // api/Product
-        public IEnumerable<Product> GetProducts()
+        [HttpGet("{page}")] // api/Product
+        public IEnumerable<Product> GetProducts(int page)
         {
-            return _repository.Products;
+            return _repository.Products.Skip((page - 1) * PageSize).Take(PageSize);
         }
 
         [HttpGet("{id}")]
         public Product GetProduct(Guid id)
         {
-            Product existingProduct = _repository.Products.FirstOrDefault(p => p.Id == id);
+            Product existingProduct = _repository.Products.FirstOrDefault(p => p.ProductId == id);
             return existingProduct;
         }
     }

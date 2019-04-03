@@ -22,7 +22,7 @@ namespace MBStore.Models
                 context.Products.AddRange(
                     new Product
                     {
-                        Id = Guid.NewGuid(),
+                        ProductId = Guid.NewGuid(),
                         Name = "Toupie Beyblade",
                         Description = "La super toupie des kevin de 12 ans.",
                         VATRate = 0.20m,
@@ -31,7 +31,7 @@ namespace MBStore.Models
                     },
                     new Product
                     {
-                        Id = Guid.NewGuid(),
+                        ProductId = Guid.NewGuid(),
                         Name = "Porte-clé Mickey",
                         Description = "L'accessoire parfait pour finir seul.",
                         VATRate = 0.10m,
@@ -40,7 +40,7 @@ namespace MBStore.Models
                     },
                     new Product
                     {
-                        Id = Guid.NewGuid(),
+                        ProductId = Guid.NewGuid(),
                         Name = "Poke-ball",
                         Description = "Puceau jusqu'à 45 ans.",
                         VATRate = 0.15m,

@@ -25,17 +25,27 @@ namespace MBStore.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cart>()
-                .HasOne(c => c.Order)
-                .WithOne(o => o.Cart)
-                .HasForeignKey<Order>(o => o.CartId);
-
-            modelBuilder.Entity<Cart>()
-                .HasMany(c => c.CartItems)
-                .WithOne(ci => ci.Cart);
+            modelBuilder.Entity<Order>()
+                .HasOne<Cart>(o => o.Cart)
+                .WithOne(c => c.Order)
+                .HasForeignKey<Cart>(c => c.OrderId);
 
             modelBuilder.Entity<CartItem>()
-                .HasOne(ci => ci.Product);
+                .HasOne<Cart>(c => c.Cart)
+                .WithMany(ca => ca.CartItems)
+                .HasForeignKey(c => c.CartId);
+
+            modelBuilder.Entity<CartItemProduct>().HasKey(cip => new { cip.ProductId, cip.CartItemId });
+
+            modelBuilder.Entity<CartItemProduct>()
+                .HasOne<Product>(cip => cip.Product)
+                .WithMany(p => p.CartItemProducts)
+                .HasForeignKey(cip => cip.ProductId);
+
+            modelBuilder.Entity<CartItemProduct>()
+                .HasOne<CartItem>(cip => cip.CartItem)
+                .WithMany(p => p.CartItemProducts)
+                .HasForeignKey(cip => cip.CartItemId);
         }
     }
 }

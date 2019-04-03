@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace MBStore.Interfaces
 {
-    interface IOrderRepository
+    public interface IOrderRepository
     {
         IQueryable<Order> GetOrders();
 
         Order GetOrder(Guid id);
 
-        Guid CreateOrder(Order order);
+        bool CreateOrder(Order order);
 
+        Order UpdateOrder(Order order);
+
+        bool DeleteOrder(Guid id);
     }
 }

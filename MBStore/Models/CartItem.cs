@@ -7,19 +7,21 @@ namespace MBStore.Models
 {
     public class CartItem
     {
-        public Guid Id { get; set; }
+        public Guid CartItemId { get; set; }
 
-        public Product Product { get; set; }
+        public IList<CartItemProduct> CartItemProducts { get; set; }
 
         public int Quantity { get; set; }
 
         public decimal Subtotal { get; set; }
 
+        public Guid CartId { get; set; }
+
         public Cart Cart { get; set; }
 
         public CartItem()
         {
-            Id = Guid.NewGuid();
+            CartItemId = Guid.NewGuid();
         }
 
     }

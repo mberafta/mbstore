@@ -42,7 +42,11 @@ namespace MBStore
                     Configuration["Data:MBStoreDatabase:ConnectionString"]));
 
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,25 +68,14 @@ namespace MBStore
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseSession();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Product}/{action=list}/{id?}");
             });
-
-            //app.Use(async (context, next) =>
-            //{
-            //    await next();
-
-            //    if(context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
-            //    {
-            //        context.Request.Path = "/index.html";
-            //        context.Response.StatusCode = 200;
-            //        await next();
-            //    }
-
-            //});
 
             SeedData.EnsurePopulated(app);
         }

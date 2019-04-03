@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_product_product_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/product/product-list.component */ "./src/app/components/product/product-list.component.ts");
+/* harmony import */ var _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/product/product-list/product-list.component */ "./src/app/components/product/product-list/product-list.component.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 
 
@@ -88,7 +88,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: 'products', component: _components_product_product_list_component__WEBPACK_IMPORTED_MODULE_3__["ProductListComponent"] },
+    { path: 'products', component: _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_3__["ProductListComponent"] },
     { path: '**', redirectTo: '' },
     { path: '', component: _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"] }
 ];
@@ -126,7 +126,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" href=\"#\">MB Store</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\" *ngFor=\"let p of pages; let i = index;\">\r\n        <a class=\"nav-link\" [routerLink]=[p.link]>\r\n          {{p.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n<footer>\r\n  <div class=\"container text-center\">\r\n    <small>Copyright &copy; MB Store</small>\r\n  </div>\r\n</footer>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"#\">MB Store</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\" *ngFor=\"let p of pages; let i = index;\">\r\n        <a class=\"nav-link\" [routerLink]=[p.link]>\r\n          {{p.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n    <mbs-cart-dropdown></mbs-cart-dropdown>\r\n  </div>\r\n</nav>\r\n<div class=\"jumbotron jumbotron-fluid low-opacity\">\r\n  <div class=\"container-fluid text-center\">\r\n    <h1>MB STORE</h1>\r\n    <strong>Solution e-commerce Angular & ASP .NET CORE 2</strong>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>\r\n<footer class=\"low-opacity\">\r\n  <div class=\"container-fluid text-center global-padding\" style=\"background:#343a40; color:white;\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-3 offset-sm-1\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n    </div>\r\n    <div class=\"row global-padding\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <small class=\"text-center\">Copyright &copy; MB Store</small>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>"
 
 /***/ }),
 
@@ -182,14 +182,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_ngboostrap_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-ngboostrap.module */ "./src/app/app-ngboostrap.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_product_product_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/product/product-list.component */ "./src/app/components/product/product-list.component.ts");
+/* harmony import */ var ngx_webstorage_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-webstorage-service */ "./node_modules/ngx-webstorage-service/fesm5/ngx-webstorage-service.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/product/product-list/product-list.component */ "./src/app/components/product/product-list/product-list.component.ts");
+/* harmony import */ var _components_cart_cart_dropdown_cart_dropdown_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/cart/cart-dropdown/cart-dropdown.component */ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.ts");
+/* harmony import */ var _services_cart_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/cart.service */ "./src/app/services/cart.service.ts");
 
 
 
 
 
 
+// COMPONENTS
+
+
+
+// SERVICES
 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -197,16 +205,20 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _components_product_product_list_component__WEBPACK_IMPORTED_MODULE_6__["ProductListComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_7__["ProductListComponent"],
+                _components_cart_cart_dropdown_cart_dropdown_component__WEBPACK_IMPORTED_MODULE_8__["CartDropdownComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _app_ngboostrap_module__WEBPACK_IMPORTED_MODULE_4__["AppNgBootstrapModule"]
+                _app_ngboostrap_module__WEBPACK_IMPORTED_MODULE_4__["AppNgBootstrapModule"],
+                ngx_webstorage_service__WEBPACK_IMPORTED_MODULE_5__["StorageServiceModule"]
             ],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+            providers: [
+                _services_cart_service__WEBPACK_IMPORTED_MODULE_9__["CartService"]
+            ],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -216,32 +228,85 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/product/product-list.component.css":
-/*!***************************************************************!*\
-  !*** ./src/app/components/product/product-list.component.css ***!
-  \***************************************************************/
+/***/ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/cart/cart-dropdown/cart-dropdown.component.css ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC9wcm9kdWN0LWxpc3QuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2FydC9jYXJ0LWRyb3Bkb3duL2NhcnQtZHJvcGRvd24uY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
-/***/ "./src/app/components/product/product-list.component.html":
-/*!****************************************************************!*\
-  !*** ./src/app/components/product/product-list.component.html ***!
-  \****************************************************************/
+/***/ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/cart/cart-dropdown/cart-dropdown.component.html ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-sm-12\">\r\n    <ul class=\"list-group\">\r\n      <li class=\"list-group-item\" *ngFor=\"let p of products\">\r\n        {{p.name}}\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"btn-group\" dropdown>\r\n    <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle float-right\"\r\n        aria-controls=\"dropdown-basic\">\r\n        Panier <span class=\"caret\"></span>\r\n    </button>\r\n    <ul id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n        <li role=\"menuitem\"><a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        <li class=\"divider dropdown-divider\"></li>\r\n        <li role=\"menuitem\"><a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        </li>\r\n    </ul>\r\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/components/product/product-list.component.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/components/product/product-list.component.ts ***!
-  \**************************************************************/
+/***/ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/components/cart/cart-dropdown/cart-dropdown.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: CartDropdownComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartDropdownComponent", function() { return CartDropdownComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CartDropdownComponent = /** @class */ (function () {
+    function CartDropdownComponent() {
+    }
+    CartDropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'mbs-cart-dropdown',
+            template: __webpack_require__(/*! ./cart-dropdown.component.html */ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.html"),
+            styles: [__webpack_require__(/*! ./cart-dropdown.component.css */ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.css")]
+        })
+    ], CartDropdownComponent);
+    return CartDropdownComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/product/product-list/product-list.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/product/product-list/product-list.component.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC9wcm9kdWN0LWxpc3QvcHJvZHVjdC1saXN0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/product/product-list/product-list.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/product/product-list/product-list.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-4\" style=\"padding:5px;\" *ngFor=\"let p of displayedProducts\">\r\n      <div class=\"card\">\r\n        <img class=\"card-img-top\" src=\"http://via.placeholder.com/640x360\" alt=\"Card image cap\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">{{p.name}} - <strong>{{p.price | currency}}</strong></h5>\r\n          <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\r\n            content.</p>\r\n          <a href=\"#\" class=\"btn btn-primary\"><span>Ajouter</span></a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <hr />\r\n  <div class=\"row\" style=\"padding-bottom:2.5em;\">\r\n    <div class=\"col-sm-12 text-center\">\r\n      <div class=\"btn-group\">\r\n        <button class=\"btn btn-info\" *ngIf=\"paginationOptions.currentPage > 0\" (click)=\"changePage(-1)\">\r\n          Précédent\r\n        </button>\r\n        <button class=\"btn btn-info\" *ngIf=\"paginationOptions.currentPage < paginationOptions.totalPages\" (click)=\"changePage(1)\">\r\n          Suivant\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/product/product-list/product-list.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/product/product-list/product-list.component.ts ***!
+  \***************************************************************************/
 /*! exports provided: ProductListComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -249,27 +314,121 @@ module.exports = "<div class=\"row\">\r\n  <div class=\"col-sm-12\">\r\n    <ul 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductListComponent", function() { return ProductListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cart_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../services/cart.service */ "./src/app/services/cart.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
+
 
 
 var ProductListComponent = /** @class */ (function () {
-    function ProductListComponent() {
-        this.products = [
-            { name: 'Produit 1' },
-            { name: 'Produit 2' }
-        ];
+    function ProductListComponent(cartService) {
+        var _this = this;
+        this.cartService = cartService;
+        this.products = [];
+        this.displayedProducts = [];
+        this.paginationOptions = {
+            currentPage: 0,
+            totalPages: 0,
+            pageSize: 9
+        };
+        for (var i = 0; i < 10; i++) {
+            this.products.push({
+                name: 'Produit ' + (i + 1),
+                price: 1.50 * (i + 1)
+            });
+        }
+        this.paginationOptions.totalPages = this.getTotalPages(this.products, this.paginationOptions.pageSize);
+        this.paginationsOptionsStream = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](this.paginationOptions);
+        this.paginationsOptionsStream.subscribe(function (val) {
+            _this.getDisplayedProducts(_this.products, val);
+        });
     }
     ProductListComponent.prototype.ngOnInit = function () {
     };
+    ProductListComponent.prototype.getTotalPages = function (items, size) {
+        var valid = items && items.length > 0, result = 0;
+        if (valid) {
+            var modulo = items.length % size;
+            if (modulo === 0)
+                return items.length / size;
+            else
+                return ((items.length - modulo) / size) + 1;
+        }
+        return 0;
+    };
+    ProductListComponent.prototype.changePage = function (step) {
+        if (step === 1) {
+            if (this.paginationOptions.currentPage + 1 < this.paginationOptions.totalPages)
+                this.paginationOptions.currentPage++;
+        }
+        else if (step === -1) {
+            if (this.paginationOptions.currentPage - 1 >= 0)
+                this.paginationOptions.currentPage--;
+        }
+        this.paginationsOptionsStream.next(this.paginationOptions);
+    };
+    ProductListComponent.prototype.getDisplayedProducts = function (arr, opts) {
+        this.displayedProducts = arr.slice().filter(function (p, index, arr) {
+            var page = opts.currentPage, size = opts.pageSize;
+            return index >= page * size && index < (page + 1) * size;
+        });
+    };
     ProductListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'mbs-product-list',
-            template: __webpack_require__(/*! ./product-list.component.html */ "./src/app/components/product/product-list.component.html"),
-            styles: [__webpack_require__(/*! ./product-list.component.css */ "./src/app/components/product/product-list.component.css")]
+            template: __webpack_require__(/*! ./product-list.component.html */ "./src/app/components/product/product-list/product-list.component.html"),
+            styles: [__webpack_require__(/*! ./product-list.component.css */ "./src/app/components/product/product-list/product-list.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_cart_service__WEBPACK_IMPORTED_MODULE_1__["CartService"]])
     ], ProductListComponent);
     return ProductListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/cart.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/cart.service.ts ***!
+  \******************************************/
+/*! exports provided: CartService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartService", function() { return CartService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_webstorage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-webstorage-service */ "./node_modules/ngx-webstorage-service/fesm5/ngx-webstorage-service.js");
+
+
+
+var CartService = /** @class */ (function () {
+    function CartService(storage) {
+        this.storage = storage;
+        this.CART_KEY = "mbstore_cart";
+    }
+    CartService.prototype.storeCart = function (newCart) {
+        this.storage.set(this.CART_KEY, newCart);
+    };
+    CartService.prototype.getStoredCart = function () {
+        return this.storage.get(this.CART_KEY);
+    };
+    CartService.prototype.saveCart = function () {
+    };
+    CartService.prototype.getCartInstance = function () {
+    };
+    CartService.prototype.resetCart = function () {
+        this.storage.set(this.CART_KEY, null);
+    };
+    CartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(ngx_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["LOCAL_STORAGE"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object])
+    ], CartService);
+    return CartService;
 }());
 
 
@@ -337,7 +496,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\XUFJ641\source\repos\MBStore\MBStore\ClientApp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Projets web\mbstore\mbstore\clientapp\src\main.ts */"./src/main.ts");
 
 
 /***/ })
