@@ -1,6 +1,6 @@
 import { CartService } from './../../../services/cart.service';
 import { PaginationOptions } from './../../../shared/PaginationOptions';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Subject, BehaviorSubject, Observable } from 'rxjs';
   styleUrls: ['./product-list.component.css']
 })
 
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
 
   products: any[] = [];
   displayedProducts: any[] = [];
@@ -43,6 +43,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  ngOnDestroy() {
+    this.paginationsOptionsStream.unsubscribe();
   }
 
   public getTotalPages(items: any[], size): number {
