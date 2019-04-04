@@ -74,7 +74,7 @@ namespace MBStore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Product}/{action=list}/{id?}");
+                    template: "{controller}/{action}/{id?}");
             });
 
             SeedData.EnsurePopulated(app);
