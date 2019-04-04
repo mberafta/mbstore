@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'; 
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppNgBootstrapModule } from './app-ngboostrap.module';
@@ -13,6 +13,7 @@ import { CartDropdownComponent } from './components/cart/cart-dropdown/cart-drop
 
 // SERVICES
 import { CartService } from './services/cart.service';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CartService } from './services/cart.service';
     HttpClientModule
   ],
   providers: [
-    CartService
+    CartService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
