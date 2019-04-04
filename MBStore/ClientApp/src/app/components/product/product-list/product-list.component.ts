@@ -1,7 +1,9 @@
+import { ProductService } from './../../../services/product.service';
 import { CartService } from './../../../services/cart.service';
 import { PaginationOptions } from './../../../shared/PaginationOptions';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
+import { Product } from '../../../shared/Product';
 
 @Component({
   selector: 'mbs-product-list',
@@ -11,7 +13,7 @@ import { Subject, BehaviorSubject, Observable } from 'rxjs';
 
 export class ProductListComponent implements OnInit, OnDestroy {
 
-  products: any[] = [];
+  products: Product[] = [];
   displayedProducts: any[] = [];
 
   paginationOptions: PaginationOptions = {
@@ -22,27 +24,24 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   paginationsOptionsStream: BehaviorSubject<PaginationOptions>;
 
-  constructor(private cartService: CartService) {
-    for (let i = 0; i < 10; i++) {
-      this.products.push({
-        name: 'Produit ' + (i + 1),
-        price: 1.50 * (i + 1)
-      });
-    }
+  constructor(private cartService: CartService, private productService: ProductService) {
+    this.productService.getAll().subscribe(
+      (res) => {
+        this.products = res as Product[];
+        this.paginationOptions.totalPages = this.getTotalPages(this.products, this.paginationOptions.pageSize);
+        this.paginationsOptionsStream = new BehaviorSubject<PaginationOptions>(this.paginationOptions);
 
-    this.paginationOptions.totalPages = this.getTotalPages(this.products, this.paginationOptions.pageSize);
-
-    this.paginationsOptionsStream = new BehaviorSubject<PaginationOptions>(this.paginationOptions);
-
-    this.paginationsOptionsStream.subscribe(
-      (val) => {
-        this.getDisplayedProducts(this.products, val);
+        this.paginationsOptionsStream.subscribe(
+          (val) => {
+            this.getDisplayedProducts(this.products, val);
+          }
+        );
       }
     );
   }
 
   ngOnInit() {
-
+  
   }
 
   ngOnDestroy() {

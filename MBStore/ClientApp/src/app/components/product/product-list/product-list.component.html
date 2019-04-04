@@ -4,8 +4,8 @@
       <div class="card">
         <img class="card-img-top" src="http://via.placeholder.com/640x360" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{p.name}} - <strong>{{p.price | currency}}</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          <h5 class="card-title">{{p.name}} - <strong>{{p.includingTaxPrice | currency}}</strong></h5>
+          <p class="card-text">{{p.description}}
             content.</p>
           <a href="#" class="btn btn-primary"><span>Ajouter</span></a>
         </div>
@@ -19,7 +19,7 @@
         <button class="btn btn-info" *ngIf="paginationOptions.currentPage > 0" (click)="changePage(-1)">
           Précédent
         </button>
-        <button class="btn btn-info" *ngIf="paginationOptions.currentPage < paginationOptions.totalPages" (click)="changePage(1)">
+        <button class="btn btn-info" *ngIf="paginationOptions.currentPage + 1 < paginationOptions.totalPages" (click)="changePage(1)">
           Suivant
         </button>
       </div>
