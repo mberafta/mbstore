@@ -6,6 +6,7 @@ using MBStore.Interfaces;
 using MBStore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MBStore.ClassExtensions;
 
 namespace MBStore.Controllers
 {
@@ -38,6 +39,7 @@ namespace MBStore.Controllers
         {
             return _repository.CreateOrder(order);
         }
+
 
         public OrderController(IOrderRepository repository)
         {

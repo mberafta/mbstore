@@ -1,9 +1,12 @@
+import { CartItemProduct } from './CartItemProduct';
+
 export class Product {
-    public ProductId: string;
-    public Name: string;
-    public Description: string;
-    public ImageUrl: string;
-    public ExcludingTaxPrice: number;
-    public IncludingTaxPrice: number;
-    public VATRate: number;
+    public productId: string;
+    public name: string;
+    public description: string;
+    public imageUrl: string;
+    public excludingTaxPrice: string;
+    public includingTaxPrice: string;
+    public vatRate: number;
+    public cartItemProducts: CartItemProduct[];
 }
