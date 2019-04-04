@@ -331,7 +331,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ProductListComponent = /** @class */ (function () {
     function ProductListComponent(cartService, productService) {
-        var _this = this;
         this.cartService = cartService;
         this.productService = productService;
         this.products = [];
@@ -341,6 +340,9 @@ var ProductListComponent = /** @class */ (function () {
             totalPages: 0,
             pageSize: 9
         };
+    }
+    ProductListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.productService.getAll().subscribe(function (res) {
             _this.products = res;
             _this.paginationOptions.totalPages = _this.getTotalPages(_this.products, _this.paginationOptions.pageSize);
@@ -349,8 +351,6 @@ var ProductListComponent = /** @class */ (function () {
                 _this.getDisplayedProducts(_this.products, val);
             });
         });
-    }
-    ProductListComponent.prototype.ngOnInit = function () {
     };
     ProductListComponent.prototype.ngOnDestroy = function () {
         this.paginationsOptionsStream.unsubscribe();

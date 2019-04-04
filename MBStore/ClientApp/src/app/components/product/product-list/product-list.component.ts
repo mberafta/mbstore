@@ -25,6 +25,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
   paginationsOptionsStream: BehaviorSubject<PaginationOptions>;
 
   constructor(private cartService: CartService, private productService: ProductService) {
+
+  }
+
+  ngOnInit() {
     this.productService.getAll().subscribe(
       (res) => {
         this.products = res as Product[];
@@ -38,10 +42,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
         );
       }
     );
-  }
-
-  ngOnInit() {
-  
   }
 
   ngOnDestroy() {
