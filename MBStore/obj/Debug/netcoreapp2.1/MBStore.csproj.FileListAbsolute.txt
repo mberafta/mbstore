@@ -31,3 +31,4 @@ C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.pd
 C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csproj.CopyComplete
 C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\MBStore.csprojAssemblyReference.cache
 D:\Projets web\mbstore\MBStore\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\XUFJ641\source\repos\MBStore\MBStore\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

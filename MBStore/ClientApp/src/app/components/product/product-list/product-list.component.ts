@@ -1,9 +1,8 @@
 import { ProductService } from './../../../services/product.service';
 import { CartService } from './../../../services/cart.service';
-import { PaginationOptions } from './../../../shared/PaginationOptions';
+import { PaginationOptions, Product } from './../../../shared/models/models.index';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
-import { Product } from '../../../shared/Product';
 
 @Component({
   selector: 'mbs-product-list',
@@ -82,6 +81,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
       return index >= page * size && index < (page + 1) * size;
     });
+  }
+
+  addToCart(product: Product) :void{
+    this.cartService.addItem(product);
   }
 
 }

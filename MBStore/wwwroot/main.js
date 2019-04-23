@@ -252,7 +252,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"btn-group\" dropdown>\r\n    <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle float-right\"\r\n        aria-controls=\"dropdown-basic\">\r\n        Panier <span class=\"caret\"></span>\r\n    </button>\r\n    <ul id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n        <li role=\"menuitem\"><a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        <li class=\"divider dropdown-divider\"></li>\r\n        <li role=\"menuitem\"><a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        </li>\r\n    </ul>\r\n</div>"
+module.exports = "<div class=\"btn-group\" dropdown>\r\n  <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle float-right\"\r\n          aria-controls=\"dropdown-basic\">\r\n    Panier ({{currentCart.cartItems.length}}) &nbsp;<span class=\"caret\"></span>\r\n  </button>\r\n  <ul id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n    <li role=\"menuitem\" *ngFor=\"let cartItem of currentCart.cartItems; let i=index;\">Cart item {{i}} - {{cartItem.subtotal | currency}}</li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -268,17 +268,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartDropdownComponent", function() { return CartDropdownComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/cart.service */ "./src/app/services/cart.service.ts");
+
 
 
 var CartDropdownComponent = /** @class */ (function () {
-    function CartDropdownComponent() {
+    function CartDropdownComponent(cartService) {
+        var _this = this;
+        this.cartService = cartService;
+        this.cartService.cartStream.subscribe(function (newCart) {
+            _this.currentCart = newCart;
+            console.log(newCart);
+        });
     }
+    CartDropdownComponent.prototype.ngOnInit = function () {
+        this.cartService.getCartInstance();
+    };
     CartDropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'mbs-cart-dropdown',
             template: __webpack_require__(/*! ./cart-dropdown.component.html */ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.html"),
             styles: [__webpack_require__(/*! ./cart-dropdown.component.css */ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.css")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_cart_service__WEBPACK_IMPORTED_MODULE_2__["CartService"]])
     ], CartDropdownComponent);
     return CartDropdownComponent;
 }());
@@ -305,7 +317,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-4\" style=\"padding:5px;\" *ngFor=\"let p of displayedProducts\">\r\n      <div class=\"card\">\r\n        <img class=\"card-img-top\" src=\"http://via.placeholder.com/640x360\" alt=\"Card image cap\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">{{p.name}} - <strong>{{p.includingTaxPrice | currency}}</strong></h5>\r\n          <p class=\"card-text\">{{p.description}}\r\n            content.</p>\r\n          <a href=\"#\" class=\"btn btn-primary\"><span>Ajouter</span></a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <hr />\r\n  <div class=\"row\" style=\"padding-bottom:2.5em;\">\r\n    <div class=\"col-sm-12 text-center\">\r\n      <div class=\"btn-group\">\r\n        <button class=\"btn btn-info\" *ngIf=\"paginationOptions.currentPage > 0\" (click)=\"changePage(-1)\">\r\n          Précédent\r\n        </button>\r\n        <button class=\"btn btn-info\" *ngIf=\"paginationOptions.currentPage + 1 < paginationOptions.totalPages\" (click)=\"changePage(1)\">\r\n          Suivant\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-4\" style=\"padding:5px;\" *ngFor=\"let p of displayedProducts\">\r\n      <div class=\"card\">\r\n        <img class=\"card-img-top\" src=\"http://via.placeholder.com/640x360\" alt=\"Card image cap\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">{{p.name}} - <strong>{{p.includingTaxPrice | currency}}</strong></h5>\r\n          <p class=\"card-text\">{{p.description}}\r\n            content.</p>\r\n          <a class=\"btn btn-primary\" (click)=\"addToCart(p)\"><span>Ajouter</span></a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <hr />\r\n  <div class=\"row\" style=\"padding-bottom:2.5em;\">\r\n    <div class=\"col-sm-12 text-center\">\r\n      <div class=\"btn-group\">\r\n        <button class=\"btn btn-info\" *ngIf=\"paginationOptions.currentPage > 0\" (click)=\"changePage(-1)\">\r\n          Précédent\r\n        </button>\r\n        <button class=\"btn btn-info\" *ngIf=\"paginationOptions.currentPage + 1 < paginationOptions.totalPages\" (click)=\"changePage(1)\">\r\n          Suivant\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -383,6 +395,9 @@ var ProductListComponent = /** @class */ (function () {
             return index >= page * size && index < (page + 1) * size;
         });
     };
+    ProductListComponent.prototype.addToCart = function (product) {
+        this.cartService.addItem(product);
+    };
     ProductListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'mbs-product-list',
@@ -412,6 +427,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var ngx_webstorage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-webstorage-service */ "./node_modules/ngx-webstorage-service/fesm5/ngx-webstorage-service.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _shared_models_models_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/models/models.index */ "./src/app/shared/models/models.index.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
+
 
 
 
@@ -421,6 +440,7 @@ var CartService = /** @class */ (function () {
         this.storage = storage;
         this.http = http;
         this.CART_KEY = "mbstore_cart";
+        this.cartStream = new rxjs__WEBPACK_IMPORTED_MODULE_5__["BehaviorSubject"](null);
     }
     CartService.prototype.storeCart = function (newCart) {
         this.storage.set(this.CART_KEY, newCart);
@@ -429,14 +449,27 @@ var CartService = /** @class */ (function () {
         return this.storage.get(this.CART_KEY);
     };
     CartService.prototype.saveCart = function () {
-        var currentCart = this.getStoredCart();
-        return this.http.post("/api/Cart", currentCart);
+        var _this = this;
+        this.http.post("/api/Cart", this._currentCart).subscribe(function (response) {
+            _this.cartStream.next(response);
+            _this._currentCart = response;
+        }, function (error) {
+        });
     };
     CartService.prototype.getCartInstance = function () {
-        return this.http.get("/api/Cart");
+        var _this = this;
+        this.http.get("/api/Cart").subscribe(function (response) {
+            _this.cartStream.next(response);
+            _this._currentCart = response;
+        });
     };
     CartService.prototype.resetCart = function () {
         this.storage.set(this.CART_KEY, null);
+    };
+    CartService.prototype.addItem = function (product) {
+        var cartItem = new _shared_models_models_index__WEBPACK_IMPORTED_MODULE_4__["CartItem"](product);
+        this._currentCart.cartItems.push(cartItem);
+        this.saveCart();
     };
     CartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
@@ -482,6 +515,147 @@ var ProductService = /** @class */ (function () {
     ], ProductService);
     return ProductService;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/Cart.ts":
+/*!***************************************!*\
+  !*** ./src/app/shared/models/Cart.ts ***!
+  \***************************************/
+/*! exports provided: Cart */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return Cart; });
+var Cart = /** @class */ (function () {
+    function Cart() {
+    }
+    return Cart;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/CartItem.ts":
+/*!*******************************************!*\
+  !*** ./src/app/shared/models/CartItem.ts ***!
+  \*******************************************/
+/*! exports provided: CartItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartItem", function() { return CartItem; });
+/* harmony import */ var angular2_uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular2-uuid */ "./node_modules/angular2-uuid/index.js");
+/* harmony import */ var angular2_uuid__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular2_uuid__WEBPACK_IMPORTED_MODULE_0__);
+
+var CartItem = /** @class */ (function () {
+    function CartItem(product) {
+        this.cartItemId = angular2_uuid__WEBPACK_IMPORTED_MODULE_0__["UUID"].UUID();
+        this.quantity = 1;
+        if (product) {
+            this.subTotal = this.quantity * product.excludingTaxPrice;
+        }
+    }
+    return CartItem;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/CartItemProduct.ts":
+/*!**************************************************!*\
+  !*** ./src/app/shared/models/CartItemProduct.ts ***!
+  \**************************************************/
+/*! exports provided: CartItemProduct */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartItemProduct", function() { return CartItemProduct; });
+var CartItemProduct = /** @class */ (function () {
+    function CartItemProduct(cartItem, product) {
+    }
+    return CartItemProduct;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/Order.ts":
+/*!****************************************!*\
+  !*** ./src/app/shared/models/Order.ts ***!
+  \****************************************/
+/*! exports provided: Order */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Order", function() { return Order; });
+var Order = /** @class */ (function () {
+    function Order() {
+    }
+    return Order;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/Product.ts":
+/*!******************************************!*\
+  !*** ./src/app/shared/models/Product.ts ***!
+  \******************************************/
+/*! exports provided: Product */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Product", function() { return Product; });
+var Product = /** @class */ (function () {
+    function Product() {
+    }
+    return Product;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/models.index.ts":
+/*!***********************************************!*\
+  !*** ./src/app/shared/models/models.index.ts ***!
+  \***********************************************/
+/*! exports provided: Cart, CartItem, CartItemProduct, Order, Product */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cart */ "./src/app/shared/models/Cart.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return _Cart__WEBPACK_IMPORTED_MODULE_0__["Cart"]; });
+
+/* harmony import */ var _CartItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartItem */ "./src/app/shared/models/CartItem.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CartItem", function() { return _CartItem__WEBPACK_IMPORTED_MODULE_1__["CartItem"]; });
+
+/* harmony import */ var _CartItemProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CartItemProduct */ "./src/app/shared/models/CartItemProduct.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CartItemProduct", function() { return _CartItemProduct__WEBPACK_IMPORTED_MODULE_2__["CartItemProduct"]; });
+
+/* harmony import */ var _Order__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Order */ "./src/app/shared/models/Order.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Order", function() { return _Order__WEBPACK_IMPORTED_MODULE_3__["Order"]; });
+
+/* harmony import */ var _Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product */ "./src/app/shared/models/Product.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Product", function() { return _Product__WEBPACK_IMPORTED_MODULE_4__["Product"]; });
+
+
+
+
+
 
 
 
@@ -548,7 +722,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Projets web\mbstore\mbstore\clientapp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\XUFJ641\source\repos\MBStore\mbstore\clientapp\src\main.ts */"./src/main.ts");
 
 
 /***/ })

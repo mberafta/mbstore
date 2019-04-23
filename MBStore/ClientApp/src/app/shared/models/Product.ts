@@ -5,8 +5,8 @@ export class Product {
     public name: string;
     public description: string;
     public imageUrl: string;
-    public excludingTaxPrice: string;
-    public includingTaxPrice: string;
+    public excludingTaxPrice: number;
+    public includingTaxPrice: number;
     public vatRate: number;
     public cartItemProducts: CartItemProduct[];
 }

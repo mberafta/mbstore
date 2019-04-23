@@ -14,6 +14,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\app-ngboostrap.module.ts" />
     <None Remove="ClientApp\src\app\components\product\product-list.component.ts" />
+    <None Remove="ClientApp\src\app\shared\models\models.index.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\app-ngboostrap.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\product\product-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\models.index.ts" />
   </ItemGroup>
 
 </Project>

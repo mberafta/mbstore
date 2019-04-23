@@ -7,7 +7,7 @@
           <h5 class="card-title">{{p.name}} - <strong>{{p.includingTaxPrice | currency}}</strong></h5>
           <p class="card-text">{{p.description}}
             content.</p>
-          <a href="#" class="btn btn-primary"><span>Ajouter</span></a>
+          <a class="btn btn-primary" (click)="addToCart(p)"><span>Ajouter</span></a>
         </div>
       </div>
     </div>

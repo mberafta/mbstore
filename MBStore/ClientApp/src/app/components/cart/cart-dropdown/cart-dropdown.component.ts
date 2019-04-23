@@ -1,11 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../../services/cart.service';
+import { Cart } from '../../../shared/models/Cart';
 
 @Component({
-    selector:'mbs-cart-dropdown',
-    templateUrl:'./cart-dropdown.component.html',
-    styleUrls:['./cart-dropdown.component.css']
+  selector: 'mbs-cart-dropdown',
+  templateUrl: './cart-dropdown.component.html',
+  styleUrls: ['./cart-dropdown.component.css']
 })
 
-export class CartDropdownComponent{
-    
+export class CartDropdownComponent implements OnInit {
+
+  currentCart: Cart;
+
+  constructor(private cartService: CartService) {
+    this.cartService.cartStream.subscribe(
+      (newCart) => {
+        this.currentCart = newCart;
+        console.log(newCart);
+      }
+    );
+  }
+
+  ngOnInit() {
+    this.cartService.getCartInstance();
+  }
+
 }
