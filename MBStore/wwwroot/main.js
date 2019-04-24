@@ -38,6 +38,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/tooltip/fesm5/ngx-bootstrap-tooltip.js");
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_bootstrap_collapse__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/collapse */ "./node_modules/ngx-bootstrap/collapse/fesm5/ngx-bootstrap-collapse.js");
+
 
 
 
@@ -51,12 +53,14 @@ var AppNgBootstrapModule = /** @class */ (function () {
             imports: [
                 ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_1__["BsDropdownModule"].forRoot(),
                 ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_2__["TooltipModule"].forRoot(),
-                ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["ModalModule"].forRoot()
+                ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["ModalModule"].forRoot(),
+                ngx_bootstrap_collapse__WEBPACK_IMPORTED_MODULE_5__["CollapseModule"].forRoot()
             ],
             exports: [
                 ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_1__["BsDropdownModule"],
                 ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_2__["TooltipModule"],
-                ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["ModalModule"]
+                ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["ModalModule"],
+                ngx_bootstrap_collapse__WEBPACK_IMPORTED_MODULE_5__["CollapseModule"]
             ]
         })
     ], AppNgBootstrapModule);
@@ -126,7 +130,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"#\">MB Store</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\" *ngFor=\"let p of pages; let i = index;\">\r\n        <a class=\"nav-link\" [routerLink]=[p.link]>\r\n          {{p.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n    <mbs-cart-dropdown></mbs-cart-dropdown>\r\n  </div>\r\n</nav>\r\n<div class=\"jumbotron jumbotron-fluid low-opacity\">\r\n  <div class=\"container-fluid text-center\">\r\n    <h1>MB STORE</h1>\r\n    <strong>Solution e-commerce Angular & ASP .NET CORE 2</strong>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>\r\n<footer class=\"low-opacity\">\r\n  <div class=\"container-fluid text-center global-padding\" style=\"background:#343a40; color:white;\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-3 offset-sm-1\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n    </div>\r\n    <div class=\"row global-padding\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <small class=\"text-center\">Copyright &copy; MB Store</small>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"#\">MB Store</a>\r\n  <button class=\"navbar-toggler\"\r\n          type=\"button\"\r\n          aria-controls=\"navbarNav\"\r\n          aria-expanded=\"false\"\r\n          aria-label=\"Toggle navigation\"\r\n          [attr.aria-expanded]=\"!isCollapsed\"\r\n          (click)=\"isCollapsed = !isCollapsed\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\" [collapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\" *ngFor=\"let p of pages; let i = index;\">\r\n        <a class=\"nav-link\" [routerLink]=[p.link]>\r\n          {{p.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n    <mbs-cart-dropdown></mbs-cart-dropdown>\r\n  </div>\r\n</nav>\r\n<div class=\"jumbotron jumbotron-fluid low-opacity\">\r\n  <div class=\"container-fluid text-center\">\r\n    <h1>MB STORE</h1>\r\n    <strong>Solution e-commerce Angular & ASP .NET CORE 2</strong>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>\r\n<footer class=\"low-opacity\">\r\n  <div class=\"container-fluid text-center global-padding\" style=\"background:#343a40; color:white;\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-3 offset-sm-1\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n    </div>\r\n    <div class=\"row global-padding\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <small class=\"text-center\">Copyright &copy; MB Store</small>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>\r\n"
 
 /***/ }),
 
@@ -147,6 +151,7 @@ __webpack_require__.r(__webpack_exports__);
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'ClientApp';
+        this.isCollapsed = true;
         this.pages = [
             {
                 name: "Produits", link: "/products"
@@ -252,7 +257,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"btn-group\" dropdown>\r\n  <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle float-right\"\r\n          aria-controls=\"dropdown-basic\">\r\n    Panier ({{currentCart.cartItems.length}}) &nbsp;<span class=\"caret\"></span>\r\n  </button>\r\n  <ul id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n    <li role=\"menuitem\" *ngFor=\"let cartItem of currentCart.cartItems; let i=index;\">Cart item {{i}} - {{cartItem.subtotal | currency}}</li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<div class=\"btn-group float-right\" dropdown>\r\n  <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\"\r\n          aria-controls=\"dropdown-basic\">\r\n    Panier ({{currentCart.cartItems.length}}) &nbsp;<span class=\"caret\"></span>\r\n  </button>\r\n  <div id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n    <ul class=\"list-group\">\r\n      <li role=\"menuitem\" *ngFor=\"let cartItem of currentCart.cartItems; let i=index;\" class=\"list-group-item\">\r\n        Cart item {{i}} - {{cartItem.subtotal | currency}}\r\n        <button class=\"btn btn-danger float-right\" (click)=\"deleteFromCart(i)\">Supprimer</button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -283,6 +288,9 @@ var CartDropdownComponent = /** @class */ (function () {
     }
     CartDropdownComponent.prototype.ngOnInit = function () {
         this.cartService.getCartInstance();
+    };
+    CartDropdownComponent.prototype.deleteFromCart = function (index) {
+        this.cartService.deleteItem(index);
     };
     CartDropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -469,6 +477,10 @@ var CartService = /** @class */ (function () {
     CartService.prototype.addItem = function (product) {
         var cartItem = new _shared_models_models_index__WEBPACK_IMPORTED_MODULE_4__["CartItem"](product);
         this._currentCart.cartItems.push(cartItem);
+        this.saveCart();
+    };
+    CartService.prototype.deleteItem = function (index) {
+        this._currentCart.cartItems.splice(index, 1);
         this.saveCart();
     };
     CartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

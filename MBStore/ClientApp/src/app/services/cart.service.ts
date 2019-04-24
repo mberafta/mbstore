@@ -56,4 +56,9 @@ export class CartService {
     this.saveCart();
   }
 
+  public deleteItem(index: number): void {
+    this._currentCart.cartItems.splice(index, 1);
+    this.saveCart();
+  }
+
 }

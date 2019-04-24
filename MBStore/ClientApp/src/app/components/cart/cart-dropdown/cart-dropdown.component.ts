@@ -25,4 +25,8 @@ export class CartDropdownComponent implements OnInit {
     this.cartService.getCartInstance();
   }
 
+  deleteFromCart(index: number): void {
+    this.cartService.deleteItem(index);
+  }
+
 }

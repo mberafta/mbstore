@@ -14,6 +14,12 @@ namespace MBStore.Repositories
 
         public IQueryable<Product> Products => _context.Products;
 
+        public async Task<IQueryable<Product>> AsyncProducts()
+        {
+            await Task.Delay(250);
+            return _context.Products;
+        }
+
         public ProductRepository(MBStoreDbContext context)
         {
             _context = context;
