@@ -14,6 +14,9 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\app-ngboostrap.module.ts" />
     <None Remove="ClientApp\src\app\components\product\product-list.component.ts" />
+    <None Remove="ClientApp\src\app\services\authguard.service.ts" />
+    <None Remove="ClientApp\src\app\services\login.service.ts" />
+    <None Remove="ClientApp\src\app\shared\models\Login.ts" />
     <None Remove="ClientApp\src\app\shared\models\models.index.ts" />
   </ItemGroup>
 
@@ -30,7 +33,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\app-ngboostrap.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\product\product-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\authguard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\login.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\Login.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\models.index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\components\login\" />
   </ItemGroup>
 
 </Project>

@@ -53,11 +53,17 @@ namespace MBStore.Controllers
 
             return response;
         }
+
     }
 
     public class LoginResponse
     {
         public string Token { get; set; }
         public int HttpStatus { get; set; }
+    }
+
+    public class TokenStatus
+    {
+        bool IsValid { get; set; }
     }
 }

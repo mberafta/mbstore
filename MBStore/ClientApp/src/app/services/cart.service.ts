@@ -8,21 +8,12 @@ import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable()
 export class CartService {
 
-  private readonly CART_KEY = "mbstore_cart";
   public cartStream: Subject<Cart> = new BehaviorSubject<Cart>(null);
 
   private _currentCart: Cart;
 
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService, private http: HttpClient) {
+  constructor(private http: HttpClient) {
 
-  }
-
-  public storeCart(newCart: any) {
-    this.storage.set(this.CART_KEY, newCart);
-  }
-
-  public getStoredCart() {
-    return this.storage.get(this.CART_KEY);
   }
 
   public saveCart() {
@@ -44,10 +35,6 @@ export class CartService {
         this._currentCart = response;
       }
     );
-  }
-
-  public resetCart() {
-    this.storage.set(this.CART_KEY, null);
   }
 
   public addItem(product: Product): void {

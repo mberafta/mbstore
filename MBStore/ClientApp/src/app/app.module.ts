@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppNgBootstrapModule } from './app-ngboostrap.module';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -16,6 +17,12 @@ import { LoginComponent } from './components/login/login.component';
 // SERVICES
 import { CartService } from './services/cart.service';
 import { ProductService } from './services/product.service';
+import { LoginService } from './services/login.service';
+import { AuthGuardService } from './services/authguard.service';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -29,11 +36,21 @@ import { ProductService } from './services/product.service';
     AppRoutingModule,
     AppNgBootstrapModule,
     StorageServiceModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains:['localhost']
+      }
+    })
   ],
   providers: [
     CartService,
-    ProductService
+    ProductService,
+    LoginService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
