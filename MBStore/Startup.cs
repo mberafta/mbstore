@@ -15,6 +15,9 @@ using MBStore.Interfaces;
 using MBStore.Repositories;
 using MBStore.Models;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace MBStore
 {
@@ -26,6 +29,7 @@ namespace MBStore
         }
 
         public IConfiguration Configuration { get; }
+        public object UIFramework { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -41,8 +45,24 @@ namespace MBStore
                 options.UseSqlServer(
                     Configuration["Data:MBStoreDatabase:ConnectionString"]));
 
-            services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = "http://localhost:44354",
+                            ValidAudience = "http://localhost:44354",
+                            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("MBStoreSecret$34"))
+                        };
+                    }
+                );
+       
+            services.AddSingleton<IProductRepository, ProductRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMemoryCache();
@@ -69,6 +89,8 @@ namespace MBStore
             app.UseCookiePolicy();
 
             app.UseSession();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

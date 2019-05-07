@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MBStore.Interfaces;
 using MBStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +22,7 @@ namespace MBStore.Controllers
             _repository = repository;
         }
 
-        [HttpGet] // api/Product
+        [HttpGet, Authorize] // api/Product
         public IEnumerable<Product> GetProducts()
         {
             return _repository.Products;

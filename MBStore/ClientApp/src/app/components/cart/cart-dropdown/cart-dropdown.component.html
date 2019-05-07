@@ -1,4 +1,4 @@
-<div class="btn-group float-right" dropdown>
+<div class="btn-group float-right" dropdown *ngIf="currentCart != null">
   <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
           aria-controls="dropdown-basic">
     Panier ({{currentCart.cartItems.length}}) &nbsp;<span class="caret"></span>
@@ -6,7 +6,7 @@
   <div id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
     <ul class="list-group">
       <li role="menuitem" *ngFor="let cartItem of currentCart.cartItems; let i=index;" class="list-group-item">
-        Cart item {{i}} - {{cartItem.subtotal | currency}}
+        {{cartItem.name}} - {{cartItem.subtotal | currency}}
         <button class="btn btn-danger float-right" (click)="deleteFromCart(i)">Supprimer</button>
       </li>
     </ul>

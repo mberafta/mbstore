@@ -257,7 +257,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"btn-group float-right\" dropdown>\r\n  <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\"\r\n          aria-controls=\"dropdown-basic\">\r\n    Panier ({{currentCart.cartItems.length}}) &nbsp;<span class=\"caret\"></span>\r\n  </button>\r\n  <div id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n    <ul class=\"list-group\">\r\n      <li role=\"menuitem\" *ngFor=\"let cartItem of currentCart.cartItems; let i=index;\" class=\"list-group-item\">\r\n        Cart item {{i}} - {{cartItem.subtotal | currency}}\r\n        <button class=\"btn btn-danger float-right\" (click)=\"deleteFromCart(i)\">Supprimer</button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"btn-group float-right\" dropdown *ngIf=\"currentCart != null\">\r\n  <button id=\"button-basic\" dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\"\r\n          aria-controls=\"dropdown-basic\">\r\n    Panier ({{currentCart.cartItems.length}}) &nbsp;<span class=\"caret\"></span>\r\n  </button>\r\n  <div id=\"dropdown-basic\" *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"button-basic\">\r\n    <ul class=\"list-group\">\r\n      <li role=\"menuitem\" *ngFor=\"let cartItem of currentCart.cartItems; let i=index;\" class=\"list-group-item\">\r\n        {{cartItem.name}} - {{cartItem.subtotal | currency}}\r\n        <button class=\"btn btn-danger float-right\" (click)=\"deleteFromCart(i)\">Supprimer</button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -288,6 +288,8 @@ var CartDropdownComponent = /** @class */ (function () {
     }
     CartDropdownComponent.prototype.ngOnInit = function () {
         this.cartService.getCartInstance();
+    };
+    CartDropdownComponent.prototype.ngOnDestroy = function () {
     };
     CartDropdownComponent.prototype.deleteFromCart = function (index) {
         this.cartService.deleteItem(index);
@@ -569,6 +571,7 @@ var CartItem = /** @class */ (function () {
     function CartItem(product) {
         this.cartItemId = angular2_uuid__WEBPACK_IMPORTED_MODULE_0__["UUID"].UUID();
         this.quantity = 1;
+        this.name = product.name;
         if (product) {
             this.subTotal = this.quantity * product.excludingTaxPrice;
         }
@@ -734,7 +737,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\XUFJ641\source\repos\MBStore\mbstore\clientapp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\XUFJ641\source\repos\MBStore\mbstore\clientApp\src\main.ts */"./src/main.ts");
 
 
 /***/ })

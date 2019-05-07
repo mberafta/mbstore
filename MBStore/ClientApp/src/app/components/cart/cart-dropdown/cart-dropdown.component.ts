@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
 import { Cart } from '../../../shared/models/Cart';
 
@@ -23,6 +23,10 @@ export class CartDropdownComponent implements OnInit {
 
   ngOnInit() {
     this.cartService.getCartInstance();
+  }
+
+  ngOnDestroy() {
+    
   }
 
   deleteFromCart(index: number): void {
