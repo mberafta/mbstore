@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'ClientApp';
   isCollapsed: boolean = true;
 
+  loginLink:string = "/login";
+
   pages: any[] = [
     {
       name: "Produits", link: "/products"

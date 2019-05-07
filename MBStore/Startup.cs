@@ -60,6 +60,14 @@ namespace MBStore
                         };
                     }
                 );
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
+                });
+            });
        
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IOrderRepository, OrderRepository>();
@@ -91,6 +99,8 @@ namespace MBStore
             app.UseSession();
 
             app.UseAuthentication();
+
+            app.UseCors("EnableCORS");
 
             app.UseMvc(routes =>
             {

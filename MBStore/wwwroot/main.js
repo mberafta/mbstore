@@ -82,27 +82,30 @@ var AppNgBootstrapModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/product/product-list/product-list.component */ "./src/app/components/product/product-list/product-list.component.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/product/product-list/product-list.component */ "./src/app/components/product/product-list/product-list.component.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+
 
 
 
 
 
 var routes = [
-    { path: 'products', component: _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_3__["ProductListComponent"] },
+    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"] },
+    { path: 'products', component: _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_4__["ProductListComponent"] },
     { path: '**', redirectTo: '' },
-    { path: '', component: _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"] }
+    { path: '', component: _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -130,7 +133,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"#\">MB Store</a>\r\n  <button class=\"navbar-toggler\"\r\n          type=\"button\"\r\n          aria-controls=\"navbarNav\"\r\n          aria-expanded=\"false\"\r\n          aria-label=\"Toggle navigation\"\r\n          [attr.aria-expanded]=\"!isCollapsed\"\r\n          (click)=\"isCollapsed = !isCollapsed\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\" [collapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\" *ngFor=\"let p of pages; let i = index;\">\r\n        <a class=\"nav-link\" [routerLink]=[p.link]>\r\n          {{p.name}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n    <mbs-cart-dropdown></mbs-cart-dropdown>\r\n  </div>\r\n</nav>\r\n<div class=\"jumbotron jumbotron-fluid low-opacity\">\r\n  <div class=\"container-fluid text-center\">\r\n    <h1>MB STORE</h1>\r\n    <strong>Solution e-commerce Angular & ASP .NET CORE 2</strong>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>\r\n<footer class=\"low-opacity\">\r\n  <div class=\"container-fluid text-center global-padding\" style=\"background:#343a40; color:white;\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-3 offset-sm-1\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n    </div>\r\n    <div class=\"row global-padding\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <small class=\"text-center\">Copyright &copy; MB Store</small>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" href=\"#\">MB Store</a>\r\n  <button class=\"navbar-toggler\"\r\n          type=\"button\"\r\n          aria-controls=\"navbarNav\"\r\n          aria-expanded=\"false\"\r\n          aria-label=\"Toggle navigation\"\r\n          [attr.aria-expanded]=\"!isCollapsed\"\r\n          (click)=\"isCollapsed = !isCollapsed\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\" [collapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\" *ngFor=\"let p of pages; let i = index;\">\r\n        <a class=\"nav-link\" [routerLink]=[p.link]>\r\n          {{p.name}}\r\n        </a>\r\n        <a class=\"nav-link\" [routerLink]=\"loginLink\">Login</a>\r\n      </li>\r\n    </ul>\r\n    <mbs-cart-dropdown></mbs-cart-dropdown>\r\n  </div>\r\n</nav>\r\n<div class=\"jumbotron jumbotron-fluid low-opacity\">\r\n  <div class=\"container-fluid text-center\">\r\n    <h1>MB STORE</h1>\r\n    <strong>Solution e-commerce Angular & ASP .NET CORE 2</strong>\r\n  </div>\r\n</div>\r\n<router-outlet></router-outlet>\r\n<footer class=\"low-opacity\">\r\n  <div class=\"container-fluid text-center global-padding\" style=\"background:#343a40; color:white;\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-3 offset-sm-1\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate nunc rutrum maximus fringilla.\r\n        Sed nec nunc scelerisque, facilisis purus vel, scelerisque lacus.\r\n      </div>\r\n    </div>\r\n    <div class=\"row global-padding\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <small class=\"text-center\">Copyright &copy; MB Store</small>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>\r\n"
 
 /***/ }),
 
@@ -152,6 +155,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'ClientApp';
         this.isCollapsed = true;
+        this.loginLink = "/login";
         this.pages = [
             {
                 name: "Produits", link: "/products"
@@ -192,8 +196,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/product/product-list/product-list.component */ "./src/app/components/product/product-list/product-list.component.ts");
 /* harmony import */ var _components_cart_cart_dropdown_cart_dropdown_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/cart/cart-dropdown/cart-dropdown.component */ "./src/app/components/cart/cart-dropdown/cart-dropdown.component.ts");
-/* harmony import */ var _services_cart_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/cart.service */ "./src/app/services/cart.service.ts");
-/* harmony import */ var _services_product_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/product.service */ "./src/app/services/product.service.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _services_cart_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/cart.service */ "./src/app/services/cart.service.ts");
+/* harmony import */ var _services_product_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/product.service */ "./src/app/services/product.service.ts");
 
 
 
@@ -202,6 +207,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // COMPONENTS
+
 
 
 
@@ -216,7 +222,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
                 _components_product_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_8__["ProductListComponent"],
-                _components_cart_cart_dropdown_cart_dropdown_component__WEBPACK_IMPORTED_MODULE_9__["CartDropdownComponent"]
+                _components_cart_cart_dropdown_cart_dropdown_component__WEBPACK_IMPORTED_MODULE_9__["CartDropdownComponent"],
+                _components_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -226,8 +233,8 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
             ],
             providers: [
-                _services_cart_service__WEBPACK_IMPORTED_MODULE_10__["CartService"],
-                _services_product_service__WEBPACK_IMPORTED_MODULE_11__["ProductService"]
+                _services_cart_service__WEBPACK_IMPORTED_MODULE_11__["CartService"],
+                _services_product_service__WEBPACK_IMPORTED_MODULE_12__["ProductService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
@@ -303,6 +310,48 @@ var CartDropdownComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_cart_service__WEBPACK_IMPORTED_MODULE_2__["CartService"]])
     ], CartDropdownComponent);
     return CartDropdownComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/login/login.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/login/login.component.ts ***!
+  \*****************************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent(fb) {
+        this.fb = fb;
+        this.loginForm = fb.group({
+            'name': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'password': ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
+        this.name = this.loginForm.controls['name'];
+        this.password = this.loginForm.controls['password'];
+    }
+    LoginComponent.prototype.onSubmit = function (form) {
+    };
+    LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'mbs-login',
+            template: __webpack_require__(/*! ./login.component.ts */ "./src/app/components/login/login.component.ts")
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+    ], LoginComponent);
+    return LoginComponent;
 }());
 
 
@@ -737,7 +786,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\XUFJ641\source\repos\MBStore\mbstore\clientApp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\XUFJ641\source\repos\MBStore\MBStore\ClientApp\src\main.ts */"./src/main.ts");
 
 
 /***/ })
